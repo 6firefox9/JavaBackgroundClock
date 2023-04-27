@@ -70,6 +70,6 @@ https://stackoverflow.com/questions/8511063/how-to-run-jar-file-by-double-click-
 
 Надеюсь Часы вам понравились
 
-Чтобы поддержать автора свяжитесь со мной:
+Чтобы поддержать автора или если у Вас появились трудности с программой свяжитесь со мной:
 
 whitefoxnest@icloud.com
