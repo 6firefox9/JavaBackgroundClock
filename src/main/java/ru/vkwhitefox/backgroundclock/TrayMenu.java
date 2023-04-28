@@ -65,7 +65,7 @@ public class TrayMenu{
 
     public static void trayClose(){
         TrayIcon[] trayIcons = SystemTray.getSystemTray().getTrayIcons();
-        for (var itr : trayIcons){
+        for (TrayIcon itr : trayIcons){
             SystemTray.getSystemTray().remove(itr);
         }
     }

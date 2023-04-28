@@ -11,7 +11,7 @@ public class AppLang {
     public static final String FR = "fr";
 
     private static String language = Options.language;
-    private static Locale currentLocale = Locale.of(language);
+    private static Locale currentLocale = new Locale(language);
     private static ResourceBundle resourceBundle = ResourceBundle.getBundle("locale", currentLocale);
 
     private AppLang() {}
@@ -22,7 +22,7 @@ public class AppLang {
 
     public static void setLanguage(){
         language = Options.language;
-        currentLocale = Locale.of(language);
+        currentLocale = new Locale(language);
         resourceBundle = ResourceBundle.getBundle("locale", currentLocale);
     }
 

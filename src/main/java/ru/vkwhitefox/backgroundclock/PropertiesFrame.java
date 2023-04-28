@@ -356,10 +356,18 @@ public class PropertiesFrame extends JFrame {
     //action listeners
         langMenu.addActionListener(e -> {
             switch (langMenu.getSelectedIndex()){
-                case 0 -> Options.language = AppLang.EN;
-                case 1 -> Options.language = AppLang.RU;
-                case 2 -> Options.language = AppLang.DE;
-                case 3 -> Options.language = AppLang.FR;
+                case 0:
+                    Options.language = AppLang.EN;
+                    break;
+                case 1:
+                    Options.language = AppLang.RU;
+                    break;
+                case 2:
+                    Options.language = AppLang.DE;
+                    break;
+                case 3:
+                    Options.language = AppLang.FR;
+                    break;
             }
             AppLang.setLanguage();
             SwingUtilities.invokeLater(new Runnable() {
@@ -384,7 +392,7 @@ public class PropertiesFrame extends JFrame {
                     closeButton.setText(AppLang.getString("close"));
                     repaint();
                     TrayIcon[] trayIcons = SystemTray.getSystemTray().getTrayIcons();
-                    for (var itr : trayIcons){
+                    for (TrayIcon itr : trayIcons){
                         SystemTray.getSystemTray().remove(itr);
                     }
                     TrayMenu.init();
@@ -590,12 +598,16 @@ public class PropertiesFrame extends JFrame {
     }
 
     private String selectLanguage(String value){
-        return switch (value) {
-            case AppLang.RU -> langBox[1];
-            case AppLang.DE -> langBox[2];
-            case AppLang.FR -> langBox[3];
-            default -> langBox[0]; //returns english local anyway
-        };
+        switch (value) {
+            case AppLang.RU:
+                return langBox[1];
+            case AppLang.DE:
+                return langBox[2];
+            case AppLang.FR:
+                return langBox[3];
+            default:
+                return langBox[0]; //returns english local anyway
+        }
     }
 
 }
